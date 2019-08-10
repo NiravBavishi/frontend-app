@@ -11,7 +11,7 @@ class TransactionTable extends Component {
     pageSize: 10,
     search: ""
   };
-  // TODO: TO call api after all the components mount
+  // TODO: TO call api after all the components mounts
   async componentDidMount() {
     try {
       const response = await axios.post(

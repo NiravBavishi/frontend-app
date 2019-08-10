@@ -62,11 +62,10 @@ class LineChart extends Component {
     this.state.userData.forEach(d1 => {
       const data = d1["account_history"];
 
-      data.map(d => {
+      data.some(d => {
         if (labels.length < this.state.pageSize) {
-          labels.indexOf(d.date) === -1
-            ? labels.push(this.dateFormater(d["date"]))
-            : console.log();
+          console.log("dddddd", d);
+          labels.indexOf(d.date) === -1 ? labels.push(d.date) : console.log();
         }
       });
     });
@@ -75,8 +74,8 @@ class LineChart extends Component {
 
     this.state.userData.map(ud => {
       const ddd = [];
-      label = ud["investment_name"];
-      const accoutHistory = ud["account_history"];
+      label = ud.investment_name;
+      const accoutHistory = ud.account_history;
 
       accoutHistory.map(ah => {
         if (this.state.pageSize > ddd.length) {
